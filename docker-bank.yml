@@ -19,8 +19,7 @@ services:
     depends_on:
       - command-generator
     environment:
-      DB_PORT: "25432"
-      DB_HOSTNAME: "db"
+      DATABASE_URL: postgres://rust_ch:open-bank@db:25432/balancedb
       KAFKA_BROKERS: "kafka:19092"
       SCHEMA_REGISTRY_URL: "http://schema-registry:18081"
     mem_limit: 200m

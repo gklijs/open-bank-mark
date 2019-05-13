@@ -1,2 +1,4 @@
 **
-!target/ch-docker.jar
+!src
+!Cargo.toml
+!diesel.toml
