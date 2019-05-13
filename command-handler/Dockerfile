@@ -1,6 +1,8 @@
-FROM azul/zulu-openjdk-alpine:11-jre
-MAINTAINER Gerard Klijs <gerard@openweb.nl>
+FROM clux/muslrust:stable AS builder
+COPY . .
+RUN cargo build --release
 
-ADD target/ch-docker.jar /app.jar
+FROM scratch
 
-CMD ["java", "-jar", "/app.jar"]
+COPY --from=builder /volume/target/x86_64-unknown-linux-musl/release/rust-command-handler .
+CMD ["./rust-command-handler"]

@@ -100,3 +100,6 @@ frontend/public/
 
 # Mac
 .DS_Store
+
+# Rust
+command-handler/Cargo.lock
