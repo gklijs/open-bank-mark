@@ -1,0 +1,80 @@
+spring.cloud.stream:
+  kafka:
+    binder:
+      auto-add-partitions: false
+      auto-create-topics: false
+    streams:
+      bindings:
+        cac:
+          consumer:
+              keySerde: org.apache.kafka.common.serialization.Serdes$StringSerde
+              valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+              applicationId: cac
+        cmt:
+          consumer:
+              keySerde: org.apache.kafka.common.serialization.Serdes$StringSerde
+              valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+              applicationId: cmt
+        acco:
+          producer:
+              keySerde: org.apache.kafka.common.serialization.Serdes$StringSerde
+              valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+        acfa:
+          producer:
+              keySerde: org.apache.kafka.common.serialization.Serdes$StringSerde
+              valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+        bach:
+          producer:
+              keySerde: org.apache.kafka.common.serialization.Serdes$StringSerde
+              valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+        mtco:
+          producer:
+              keySerde: org.apache.kafka.common.serialization.Serdes$StringSerde
+              valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+        mtfa:
+          producer:
+              keySerde: org.apache.kafka.common.serialization.Serdes$StringSerde
+              valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+      binder:
+        brokers: ["localhost"]
+        configuration:
+          auto.offset.reset: earliest
+          schema.registry.url: http://localhost:8081
+          auto.register.schemas: false
+          producer.acks: all
+  default:
+    consumer:
+      useNativeDecoding: true
+    producer:
+      useNativeEncoding: true
+  bindings:
+    acco:
+      destination: account_creation_confirmed
+    acfa:
+      destination: account_creation_failed
+    bach:
+      destination: balance_changed
+    cac:
+      destination: confirm_account_creation
+      group: account-creation
+    cmt:
+      destination: confirm_money_transfer
+      group: money-transfer
+    mtco:
+      destination: money_transfer_confirmed
+    mtfa:
+      destination: money_transfer_failed
+
+# postgres database
+spring.datasource:
+  url: jdbc:postgresql://localhost:5432/balancedb
+  username: kotlin_ch
+  password: open-bank
+  driver-class-name: org.postgresql.Driver
+
+# jpa
+spring.jpa.open-in-view: false
+spring.jpa.generate-ddl: true
+spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+#logging.level.org.apache.kafka: debug
+logging.level.root: info

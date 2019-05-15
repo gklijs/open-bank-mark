@@ -19,11 +19,10 @@ services:
     depends_on:
       - command-generator
     environment:
-      DB_PORT: "25432"
-      DB_HOSTNAME: "db"
-      KAFKA_BROKERS: "kafka-1:19092,kafka-2:29092,kafka-3:39092"
-      SCHEMA_REGISTRY_URL: "http://schema-registry:18081"
-    mem_limit: 200m
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://db:25432/balancedb"
+      SPRING_CLOUD_STREAM_KAFKA_STREAMS_BINDER_BROKERS: "kafka-1:19092,kafka-2:29092,kafka-3:39092"
+      SPRING_CLOUD_STREAM_KAFKA_STREAMS_BINDER_CONFIGURATION_SCHEMA_REGISTRY_URL: "http://schema-registry:18081"
+    mem_limit: 300m
     restart: always
 
   heartbeat:

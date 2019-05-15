@@ -100,3 +100,7 @@ frontend/public/
 
 # Mac
 .DS_Store
+
+
+# Kotlin
+!command-handler/pom.xml
