@@ -48,7 +48,7 @@ services:
       - zookeeper
       - kafka
     environment:
-      SCHEMA_REGISTRY_LISTENERS: http://schema-registry:18081
+      SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:18081
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: zookeeper:22181
     mem_limit: 400m
