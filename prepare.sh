@@ -3,8 +3,7 @@
 git submodule update --init
 cd frontend
 ./build-and-copy-frontend.sh
-cd ../topology
-lein install
+cd ../test
+lein uberjar
 cd ..
-lein modules uberjar
 java -jar test/target/test.jar mapping

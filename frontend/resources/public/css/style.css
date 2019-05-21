@@ -1,0 +1,60 @@
+/* some style */
+
+@font-face {
+    font-family: "LatinModernRomanWOFF";
+    /*src: url('https://www.albany.edu/~hammond/webfonts/lmroman12-regular.woff');*/
+    src: url('../fonts/lmroman12-regular.woff');
+}
+
+/* for math fonts? */
+/*@font-face {*/
+    /*font-family: "LatinModernMathWOFF";*/
+    /*src: url('https://www.albany.edu/~hammond/webfonts/latinmodern-math.woff');*/
+    /*font-weight: bold;*/
+/*}*/
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: "LatinModernRomanWOFF", serif;
+  /*font-family: 'Open Sans', sans-serif;*/
+}
+
+.fancy {
+  font-family: "LatinModernRomanWOFF", serif;
+}
+.plain {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+h2, h3 {
+  margin-top: 35px;
+  margin-bottom: 13px;
+}
+
+h2 {font-size: 30px;}
+h3 {font-size: 23px;}
+h4 {font-size: 18px;}
+
+code {
+  font-size: 16px;
+  color: grey;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+a {
+  color: darkblue;
+}
+
+
