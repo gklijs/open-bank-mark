@@ -1,3 +1,0 @@
-[submodule "frontend/bulma"]
-	path = frontend/bulma
-	url = https://github.com/jgthms/bulma.git

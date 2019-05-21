@@ -5,7 +5,6 @@
                        :aliases       {"all" ^:displace ["do" "clean," "test," "install", "uberjar"]
                                        "-f"  ["with-profile" "+fast"]}
                        :scm           {:dir ".."}
-                       :javac-options ["-target" "11" "-source" "11"]
                        :license       {:name "MIT License"
                                        :url  "https://opensource.org/licenses/MIT"
                                        :key  "mit"

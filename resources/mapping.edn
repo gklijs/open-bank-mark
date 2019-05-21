@@ -1,4 +1,7 @@
 {
- :category-name "Language"
- :mapping {"Clojure" "clojure-*"}
+ :category-name "Language command handler"
+ :mapping       {"Clojure"      "clojure-*"
+                 "Kotlin"       "kotlin-*"
+                 "Rust-rdkafka" "rust-*"
+                 "Rust-kafka"   "rn-*"}
  }
