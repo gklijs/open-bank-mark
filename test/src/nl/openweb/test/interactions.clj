@@ -15,7 +15,9 @@
 (defn wait-till-value
   [expected-value]
   (let [start (inst-ms (Instant/now))]
-    (wait-has-text @driver {:css "#transactions div:nth-child(1) div div:nth-child(1) p:nth-child(1) span:nth-child(2)"} expected-value {:interval 0.05 :timeout @time-out})
+    (wait-has-text @driver
+                   {:css "#transactions div:nth-child(1) div div:nth-child(1) p:nth-child(1) span:nth-child(2)"}
+                   expected-value {:interval 0.05 :timeout @time-out})
     (- (inst-ms (Instant/now)) start)))
 
 (defn run-deposit
@@ -69,13 +71,13 @@
     (wait 1)
     (click {:css "#login-form div:nth-child(3)"})))
 
-  (defn prep
-    [max-interaction-time]
-    (reset! time-out (int (Math/ceil (/ max-interaction-time 1000))))
-    (reset! driver (chrome-headless))
-    (login)
-    (wait-till-button))
+(defn prep
+  [max-interaction-time]
+  (reset! time-out (int (Math/ceil (/ max-interaction-time 1000))))
+  (reset! driver (chrome))
+  (login)
+  (wait-till-button))
 
-  (defn close
-    []
-    (delete-session @driver))
+(defn close
+  []
+  (delete-session @driver))
