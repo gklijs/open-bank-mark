@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/openweb-nl/open-bank-mark.svg?branch=master)](https://travis-ci.com/openweb-nl/open-bank-mark)
 
+
 Contents
 * [Intro](#intro)
 * [Development](#development)
